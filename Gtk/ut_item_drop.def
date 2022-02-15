@@ -1,0 +1,585 @@
+//====================
+// Haxxy item/weapon drop trick
+//====================
+//
+// Made by Delirium
+//
+
+/*QUAKED ut_item_silencer (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/m4/m4_silencer.md3"
+*/
+
+/*QUAKED ut_item_apr (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/players/athena/helmet.md3"
+*/
+
+/*QUAKED ut_item_extraammo (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/players/athena/helmet.md3"
+*/
+
+/*QUAKED ut_item_nvg (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/players/athena/nvg.md3"
+*/
+
+/*QUAKED ut_item_vest (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/players/athena/vest.md3"
+*/
+
+/*QUAKED ut_item_laser (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/m4/m4_laser.md3"
+*/
+
+/*QUAKED ut_item_medkit (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/players/gear/backpack.md3"
+*/
+
+/*QUAKED ut_item_helmet (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the item to be in in. If this key is not used, the item will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/players/athena/helmet.md3"
+*/
+
+/*QUAKED ut_weapon_g36 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/g36/g36.md3"
+*/
+
+/*QUAKED ut_weapon_spas (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/spas12/spas12.md3"
+*/
+
+/*QUAKED ut_weapon_beretta (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/beretta/beretta.md3"
+*/
+
+/*QUAKED ut_weapon_grenade_he (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/grenade/grenade.md3"
+*/
+
+/*QUAKED ut_weapon_knife (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/knife/knife.md3"
+*/
+
+/*QUAKED ut_weapon_ak103 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/ak103/ak103.md3"
+*/
+
+/*QUAKED ut_weapon_mp5k (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/mp5k/mp5k.md3"
+*/
+
+/*QUAKED ut_weapon_deagle (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/deserteagle/deagle.md3"
+*/
+
+/*QUAKED ut_weapon_grenade_smoke (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/grenade/grenade.md3"
+*/
+
+/*QUAKED ut_weapon_lr (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/zm300/lr.md3"
+*/
+
+/*QUAKED ut_weapon_ump45 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/ump45/ump45.md3"
+*/
+
+/*QUAKED ut_weapon_hk69 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/hk69/hk69.md3"
+*/
+
+/*QUAKED ut_weapon_psg1 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/psg1/psg1.md3"
+*/
+
+/*QUAKED ut_weapon_sr8 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/sr8/sr8.md3"
+*/
+
+/*QUAKED ut_weapon_frf1 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/frf1/frf1.md3"
+*/
+
+
+/*QUAKED ut_weapon_negev (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/negev/negev.md3"
+*/
+
+/*QUAKED ut_weapon_m4 (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/m4/m4.md3"
+*/
+
+/*QUAKED ut_weapon_grenade_flash (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+count: sets the amount of ammo given to the player when picked up (default 0).
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+A count has to be set in order for ammo to be in the weapon when picked up 
+the count system is very weird and I am unable to figure out how it works,
+but here are some usefull numbers
+count of 30   = 30 bullets 0 clips
+count of 500  = 30 bullets 1 clip
+count of 1000 = 30 bullets 2 clips
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/grenade/grenade.md3"
+*/
+
+/*QUAKED ut_weapon_bomb (0.3 0.9 0.4)(-5 -5 -5) (5 5 5) SUSPENDED
+-------- KEYS --------
+gametype : Specifies gametypes for the weapon to be in in. If this key is not used, the weapon will be in all gametypes. List types in this format: 01234
+wait : time in seconds before item respawns after being picked up (default 40, -1 = never respawn).
+random : random time variance in seconds added or subtracted from "wait" delay
+angle: direction in which model will be oriented.
+target : this points to the entity to activate.
+targetname : activating trigger points to this.
+-------- Q3MAP2 KEYS --------
+angles : Individual control of PITCH, YAW, and ROLL (default 0 0 0).
+-------- SPAWNFLAGS --------
+spawnflags : set to 1 to make suspended so the item will spawn where it was placed in map and won't drop to the floor. (default 0)
+-------- Notes --------
+Multiple bombs in a map would be interesting....
+-------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
+model="models/weapons2/bombbag/bombbag.md3"
+*/
+//	*	*	*	*	*	*	*	*
