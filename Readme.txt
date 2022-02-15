@@ -61,6 +61,7 @@ Note: The textures are using subfolders so they should not overwrite your curren
 
 Changelog:
 1.2 :
+ - Put on github
  - Fixed a mistake in how the common textures was packed that made the instal notes, instal them wrong!
  - Further updated and fixed func_ut_train and path_ut_stop info 
  - Updated func_keyboard_interface to be more correct with what works (removed most options since it is almost fully broken)
