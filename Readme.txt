@@ -22,7 +22,7 @@ Install notes:
 The .ent entity files are for nrc only while the common works for any radiant version
 
 Entity files - For Net Radiant Custom:
-If build '20220211' or future updates/'wip':
+If build '20220211' or future updates:
  - version 1.1 is included with Net Radiant Custom. You only need to instal if you want a more recent update of this pack!
  - Find the urt.game folder inside the 'gamepacks' folder located inside the main install folder and go into the q3ut4 folder.
 
