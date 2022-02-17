@@ -1,5 +1,5 @@
 Urban Terror entity definitions and common shaders by quak
-Updated: 2022-02-15
+Updated: 2022-02-16
 Version 1.2
 
 
@@ -7,6 +7,7 @@ Pack includes:
  - urtentities.ent | Definition file for entities used in urt. Updated and optimized for urt 4.3 
  - urtobjects.ent | Definition file for weapon/item entities used in urt. Updated and optimized for urt 4.3 
  - measurment.def | Definition file including useful measurement sizes that can help with mapping. Includes much more useful and correct info then the old measurment.def
+ - build_menu | A default build_menu with -noob included
  - common.shader + Textures | Common shaders with updated editor textures. Textures are aimed at giving a clean look while giving useful size indications.
 Common.shader/Textures folder also includes:
  - Separated common and common_rare to easily sort shaders more commonly used. (You can freely swap sorting by adding or removing '_rare' in the .shader)
@@ -59,10 +60,20 @@ Inside it. (No need to add these for nrc)
 Note: The textures are using subfolders so they should not overwrite your current common textures in case you don't like these.
 
 
+Build_menu for Net Radiant Custom:
+ - Find \settings\1.5.0\urt.game and replace build_menu.xml
+Note: this is a alternative default build_menu that adds -noob switche. Can be ignored if not mapping jump maps.
+Note2: If you already know how to edit build menus ignore this, you can just add -noob to your compile options manualy in nrc.
+
+
+
+
 Changelog:
 1.2 :
- - Put on github
+ - Made a github for this
  - Fixed a mistake in how the common textures was packed that made the instal notes, instal them wrong!
+ - Added a improved default build_menu that includes -noob switches
+ - Futher spell checkings and corrections
  - Further updated and fixed func_ut_train and path_ut_stop info 
  - Updated func_keyboard_interface to be more correct with what works (removed most options since it is almost fully broken)
  - Updated worldspawn with new Jump Server keys:
