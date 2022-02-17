@@ -477,9 +477,9 @@ textures/common_ter/alpha100
 //------------------------
 // Overbounce
 //------------------------
-// Note: These only affects certain jump servers! (and not offline/devmap)
+// Note: These only affects certain jump servers! (and not offline/devmap yet)
 
-textures/common_ob/ob_noob
+textures/common_ob/noob
 {
 	qer_editorimage textures/common/ob/noob
 	qer_trans 0.30
@@ -490,7 +490,7 @@ textures/common_ob/ob_noob
 	surfaceparm noob
 }
 
-textures/common_ob/ob_ob
+textures/common_ob/ob
 {
 	qer_editorimage textures/common/ob/ob
 	qer_trans 0.30
@@ -501,7 +501,7 @@ textures/common_ob/ob_ob
 	surfaceparm ob
 }
 
-textures/common_ob/ob_slicknoob
+textures/common_ob/slicknoob
 {
 	qer_editorimage textures/common/ob/slicknoob
 	qer_trans 0.40
@@ -513,7 +513,7 @@ textures/common_ob/ob_slicknoob
 	surfaceparm noob
 }
 
-textures/common_ob/ob_slickob
+textures/common_ob/slickob
 {
 	qer_editorimage textures/common/ob/slickob
 	qer_trans 0.40
