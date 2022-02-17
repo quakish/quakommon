@@ -1,5 +1,5 @@
 Urban Terror entity definitions and common shaders by quak
-Updated: 2022-02-16
+Updated: 2022-02-17
 Version 1.2
 
 
