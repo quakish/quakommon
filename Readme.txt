@@ -71,7 +71,7 @@ Note2: If you already know how to edit build menus ignore this, you can just add
 Changelog:
 1.2 :
  - Made a github for this
- - Fixed a mistake in how the common textures was packed that made the instal notes install them wrong!
+ - Fixed a mistake in how the common textures were packed that made the install notes install them wrong!
  - Added a improved default build_menu that includes -noob switches
  - Further spell checkings and corrections
  - Further updated and fixed func_ut_train and path_ut_stop info 
