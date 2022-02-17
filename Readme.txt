@@ -71,9 +71,9 @@ Note2: If you already know how to edit build menus ignore this, you can just add
 Changelog:
 1.2 :
  - Made a github for this
- - Fixed a mistake in how the common textures was packed that made the instal notes, instal them wrong!
+ - Fixed a mistake in how the common textures was packed that made the instal notes, install them wrong!
  - Added a improved default build_menu that includes -noob switches
- - Futher spell checkings and corrections
+ - Further spell checkings and corrections
  - Further updated and fixed func_ut_train and path_ut_stop info 
  - Updated func_keyboard_interface to be more correct with what works (removed most options since it is almost fully broken)
  - Updated worldspawn with new Jump Server keys:
@@ -81,7 +81,7 @@ Changelog:
 	- stamina 0/1/2 that toggles g_stamina on some jump servers
 	- walljumps 0-100 that toggles g_walljumps on some jump servers
  - Updated common with new common_ob that includes overbounce control shaders, for some jump servers
- 
+
 1.1 :
  - Some fixed spellings. Thanks Ulbens
  - Updated and fixed func_ut_train and path_ut_stop for more correct and functional trains
