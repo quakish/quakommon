@@ -1,6 +1,6 @@
 // Urban Terror entity definition file for Radiant
 // Updated by quak
-// Updated: 2022-01-07
+// Updated: 2022-02-17 
 // urtentities.def is a older version that is not as updated as .ent but works for gtk.
 // Don't use this if you use nrc
 // General changes:
@@ -10,6 +10,7 @@
 // and lots of color changes to better readability in radiant
 //
 // Futher updates to this file will not be done!
+// Update 02-17 - Added jump mode keys to this aswell, no other changes
 
 
 //=============================================================================
