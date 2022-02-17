@@ -1316,6 +1316,15 @@ enablePrecip : 0 - (default) none, 1 - rain, 2 - snow
 precipAmount : up to 1024, number of drops/flakes
 gridsize : Granularity of the lightgrid created by q3map. Value is three integers separated by spaces, representing number of units between grid points in X Y Z. Default gridsize value is 128 128 256. Use larger powers of 2 to reduce BSP size and compile time on very large maps.
 _blocksize : Q3Map always splits the BSP tree along the planes X=_blocksize*n and Y=_blocksize*n. Increase the blocksize using larger powers of 2 to reduce compile times on very large maps with a low structural brush density (default 1024 1024 0, 0 values = disable). 
+-------- JUMP MODE KEYS --------
+stamina : JUMP MODE KEY! Automatically controls g_stamina for certain jump servers. Defaults to 1.
+Note: This key only has an effect on certain jump servers and not offline/devmap, for now.
+overbounces : JUMP MODE KEY! Turns off overbounces for certain jump servers. Defaults to 0.
+0 = All overbounces disabled!
+1 = Overbounces enabled. Overbounces will happen unless you use either ‘-noob’ compile (on bsp) or use ‘surfaceparm noob’ (common_ob/noob)
+Note: This key only has an effect on certain jump server and not offline/devmap, for now.
+walljumps : JUMP MODE KEY! Automatically controls g_walljumps for certain jump servers. Defaults to 3.
+Note: This key only has an effect on certain jump servers and not offline/devmap, for now.
 -------- Q3MAP2 KEYS --------
 _floodlight : RGB distance intensity eg; .8 .8 .8 512 32. Adds radiosity lighting.
 lightdensity : New key that allows the mapper to brighten the textures more than is possible normally. You can test this in game by starting a devmap and using /r_lightdensity 1.3 (or whatever value you like).
