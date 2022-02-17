@@ -7,7 +7,7 @@ Pack includes:
  - urtentities.ent | Definition file for entities used in urt. Updated and optimized for urt 4.3 
  - urtobjects.ent | Definition file for weapon/item entities used in urt. Updated and optimized for urt 4.3 
  - measurment.def | Definition file including useful measurement sizes that can help with mapping. Includes much more useful and correct info then the old measurment.def
- - build_menu | A default build_menu with -noob included
+ - build_menu.xml | A default build_menu with -noob included
  - common.shader + Textures | Common shaders with updated editor textures. Textures are aimed at giving a clean look while giving useful size indications.
 Common.shader/Textures folder also includes:
  - Separated common and common_rare to easily sort shaders more commonly used. (You can freely swap sorting by adding or removing '_rare' in the .shader)
