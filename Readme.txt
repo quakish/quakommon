@@ -22,10 +22,10 @@ Common.shader/Textures folder also includes:
 
 Install notes!:
 The .ent entity files are for nrc only while the common works for any radiant version
+Version 1.1 of this pack is included with Net Radiant Custom (Build '20220211' onwards). So you only need to instal if you want a more recent update of this pack! (Updates includes new jump mapping related updates)
 
 
 Entity files - For Net Radiant Custom:
- - version 1.1 of this pack is included with Net Radiant Custom (Build '20220211' onwards). So you only need to instal if you want a more recent update of this pack!
  - Find 'gamepacks/urt.game/q3ut4'
  - Remove all old .def and .ent files in there!
  - Then place the inside that folder instead:
