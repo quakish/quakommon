@@ -1,6 +1,6 @@
 Urban Terror entity definitions and common shaders by quak
-Updated: 2022-02-17
-Version 1.2
+Updated: 2022-02-24
+Version 1.2.1
 
 
 Pack includes:
@@ -19,27 +19,24 @@ Common.shader/Textures folder also includes:
  - Gtk folder including an outdated urtentities.def file that is usable with gtk. But much is less updated! (Further updates for this file will not be done by me either)
 
 
-Install notes:
+
+Install notes!:
 The .ent entity files are for nrc only while the common works for any radiant version
 
+
 Entity files - For Net Radiant Custom:
-If build '20220211' or future updates:
- - version 1.1 is included with Net Radiant Custom. You only need to instal if you want a more recent update of this pack!
- - Find the urt.game folder inside the 'gamepacks' folder located inside the main install folder and go into the q3ut4 folder.
-
-If build '20210105' or older: 
- - Find the urt.game folder inside the main install folder and go into the q3ut4 folder.
-
-Following steps are the same for all builds:
- - Remove (and backup if you want.) any .def or .ent files you have there. 
-Then place the:
+ - version 1.1 of this pack is included with Net Radiant Custom (Build '20220211' onwards). So you only need to instal if you want a more recent update of this pack!
+ - Find 'gamepacks/urt.game/q3ut4'
+ - Remove all old .def and .ent files in there!
+ - Then place the inside that folder instead:
 	urtentities.ent	
 	urtobjects.ent	
 	measurment.def	
-Inside the folder instead.
 
-You have to remove any .def files that have the same name as any .ent or else those will take priority.
+You have to remove any .def files that have the same name as any .ent or else the .def will take priority.
 And the .ent files will not work in Gtk!
+
+Note older versions of net radaint custom have a different folder structure, update if your do not have the gamepacks folder. But if you want to install on older version you will instead find urt.game inside the main folder.
 
 
 Common.shader for any radiant version:
@@ -55,13 +52,14 @@ If you are using gtk you have to also add:
 	common_ob // Can be ignored for frag mapping. Only works in jump maps
 	common_bot // Can be ignored for jump mapping
 	common_color
-Inside it. (No need to add these for nrc)
+Inside it. (No need to add these for nrc!)
 
 Note: The textures are using subfolders so they should not overwrite your current common textures in case you don't like these.
 
 
+
 Build_menu for Net Radiant Custom:
- - Find \settings\1.5.0\urt.game and replace build_menu.xml
+ - Find \settings\1.5.0\urt.game in your nrc install and replace build_menu.xml
 Note: this is a alternative default build_menu that adds -noob switche. Can be ignored if not mapping jump maps.
 Note2: If you already know how to edit build menus ignore this, you can just add -noob to your compile options manualy in nrc.
 
@@ -69,6 +67,9 @@ Note2: If you already know how to edit build menus ignore this, you can just add
 
 
 Changelog:
+1.2.1 :
+ - Updated install instructions a bit
+ 
 1.2 :
  - Made a github for this
  - Fixed a mistake in how the common textures were packed that made the install notes install them wrong!
