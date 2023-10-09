@@ -1,56 +1,138 @@
 <?xml version="1.0"?>
-<!--
-build commands
-[RadiantPath]: path to Radiant .. C:\Program Files\Gtkradiant
-[EnginePath]: path to the engine .. C:\quake3\ C:\Program Files\Quake III Arena\ /usr/local/games/quake3/
--->
 <project version="2.0">
-<var name="q3map2">"[RadiantPath]q3map2.[ExecutableType]" -v<cond value="[MonitorAddress]"> -connect [MonitorAddress]</cond> -game quake3 -fs_basepath "[EnginePath]"<cond value="[GameName]"> -fs_game [GameName]</cond></var>
-<var name="mbspc">"[RadiantPath]mbspc.[ExecutableType]"</var>
+<var name="mbspc">&quot;[RadiantPath]mbspc.[ExecutableType]&quot;</var>
+<var name="q3map2">&quot;[RadiantPath]q3map2.[ExecutableType]&quot; -v[ExtraResoucePath]<cond value="[MonitorAddress]"> -connect [MonitorAddress]</cond> -game quake3 -fs_basepath &quot;[EnginePath]&quot;<cond value="[GameName]"> -fs_game [GameName]</cond></var>
 <build name="Single: bsp">
-<command>[q3map2] -meta "[MapFile]"</command>
+<command>[q3map2] -meta &quot;[MapFile]&quot;</command>
 </build>
 <build name="Single: bsp +NoOb">
-<command>[q3map2] -meta -noob "[MapFile]"</command>
+<command>[q3map2] -meta -noob &quot;[MapFile]&quot;</command>
 </build>
+<build name="Single: leaktest">
+<command>[q3map2] -meta -nodetail -nowater -leaktest -nocurves -noob &quot;[MapFile]&quot;</command>
+</build>
+<separator/>
 <build name="Single: vis">
-<command>[q3map2] -vis -saveprt "[MapFile]"</command>
+<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
 </build>
+<separator/>
 <build name="Single: light">
-<command>[q3map2] -light -fast "[MapFile]"</command>
+<command>[q3map2] -light -fast &quot;[MapFile]&quot;</command>
 </build>
-<separator />
-<build name="[test] quick and very crude">
-<command>[q3map2] -meta -samplesize 64 "[MapFile]"</command>
-<command>[q3map2] -vis -fast -saveprt "[MapFile]"</command>
-<command>[q3map2] -light -fast -nogrid "[MapFile]"</command>
+<separator/>
+<build name="[Test] Speed">
+<command>[q3map2] -meta -noob -samplesize 128 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -fast -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -faster -nogrid -cheap &quot;[MapFile]&quot;</command>
 </build>
-<separator />
-<build name="(Final)">
-<command>[q3map2] -meta "[MapFile]"</command>
-<command>[q3map2] -vis "[MapFile]"</command>
-<command>[q3map2] -light -fast -patchshadows -smooth -samples 2 -filter -bounce 8 "[MapFile]"</command>
+<build name="[Quick] Basic">
+<command>[q3map2] -meta -samplesize 32 -noob &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast &quot;[MapFile]&quot;</command>
 </build>
-<build name="(Final) +NoOb">
-<command>[q3map2] -meta -noob "[MapFile]"</command>
-<command>[q3map2] -vis "[MapFile]"</command>
-<command>[q3map2] -light -fast -patchshadows -smooth -samples 2 -filter -bounce 8 "[MapFile]"</command>
+<build name="[Quick Qfast (Normal)">
+<command>[q3map2] -meta -noob -samplesize 16 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 16 -dirty -dirtscale 0.5 -gamma 1.25 -areascale 1.05 -sky 1 -compensate 1.25 &quot;[MapFile]&quot;</command>
 </build>
-<separator />
-<build name="convert to .ASE">
-<command>[q3map2] -meta -patchmeta "[MapFile]"</command>
-<command>[q3map2] -convert -format ase -shadersasbitmap "[BspFile]"</command>
+<separator/>
+<build name="[OK] Default (Normal)">
+<command>[q3map2] -meta -noob &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -patchshadows -bounce 1 &quot;[MapFile]&quot;</command>
 </build>
-<build name="convert to .OBJ">
-<command>[q3map2] -meta -patchmeta "[MapFile]"</command>
-<command>[q3map2] -convert -format obj -shadersasbitmap "[BspFile]"</command>
+<build name="[OK] QBasic (Normal)">
+<command>[q3map2] -meta -noob -samplesize 8 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 8 -patchshadows -bounce 1 -bouncescale 1 -dirty -dirtscale 0.75 -gamma 1.25 -areascale 1.05 -sky 1 -compensate 1.25 &quot;[MapFile]&quot;</command>
 </build>
-<separator />
+<build name="[OK] QSimple (Brighter)">
+<command>[q3map2] -meta -noob -samplesize 8 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -patchshadows -samplesize 8 -gamma 1.2 -areascale 1.25 -sky 0.9 -compensate 1 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[OK] QDim (Darker)">
+<command>[q3map2] -meta -noob -samplesize 8 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 8 -patchshadows -bounce 1 -bouncescale 0.75 -dirty -dirtscale 1 -gamma 1.2 -areascale 1.15 -sky 0.95 -compensate 1.35 &quot;[MapFile]&quot;</command>
+</build>
+<separator/>
+<build name="[Good] QImproved (Normal)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 4 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 4 -patchshadows -bounce 2 -bouncescale 1 -dirty -dirtscale 1 -gamma 1.25 -areascale 1.2 -sky 1 -compensate 1.25 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[Good] QShadow (Darker)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 2 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 2 -patchshadows -bounce 1 -bouncescale 1 -dirty -dirtscale 1.2 -gamma 1.35 -areascale 1.25 -sky 0.9 -compensate 1.35 -brightness 0.85 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[Good] QLight (Brighter)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 4 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -filter -samples 2 -samplesize 4 -patchshadows -bounce 2 -bouncescale 1 -fastbounce -gamma 1.17 -areascale 1.25 -sky 1 -compensate 1.1 -brightness 1.05 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[Good] QExtra (Contrast)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 1 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 1 -patchshadows -bounce 2 -bouncescale 0.6 -saturation 1.2 -dirty -dirtscale 1.5 -dirtdepth 196 -contrast 10 -gamma 1.5 -areascale 1.4 -sky 1.1 -compensate 1.6 &quot;[MapFile]&quot;</command>
+</build>
+<separator/>
+<build name="[Special] QColor (Saturated)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 4 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 4 -patchshadows -bounce 8 -bouncescale 1.5 -bouncecolorratio 0.9 -saturation 1.55 -dirty -dirtscale 1.25 -contrast 10 -gamma 1.2 -areascale 1.5 -sky 0.8 -compensate 1.45 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[Special] QClear (Desaturated)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 4 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 4 -patchshadows -bounce 2 -bouncescale 0.5 -bouncecolorratio 0.5 -saturation 0.75 -dirty -dirtscale 1.15 -contrast -5 -gamma 1.25 -areascale 1.25 -sky 1.1 -compensate 1.5 &quot;[MapFile]&quot;</command>
+</build>
+<separator/>
+<build name="[External] QClean (Normal)">
+<command>[q3map2] -meta -noob -samplesize 8 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 8 -patchshadows -bounce 1 -bouncescale 1 -gamma 1.5 -areascale 1.1 -sky 1 -compensate 1.5 -extlmhacksize 256 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[External] QQuality (Good)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 4 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 4 -patchshadows -bounce 2 -bouncescale 1 -gamma 1.5 -areascale 1.1 -sky 1 -compensate 1.5 -extlmhacksize 512 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[External] QInsane (Insane)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 2 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 2 -patchshadows -bounce 2 -bouncescale 1 -saturation 0.9 -dirty -dirtscale 1.15 -gamma 1.5 -areascale 1.1 -sky 1 -compensate 1.5 -extlmhacksize 1024 &quot;[MapFile]&quot;</command>
+</build>
+<build name="[External] QGOD (GODLIKE)">
+<command>[q3map2] -meta -altsplit -noob -samplesize 2 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -v -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -fast -filter -samples 2 -samplesize 2 -patchshadows -bounce 4 -bouncescale 1 -dirty -dirtscale 1.3 -gamma 1.55 -areascale 1.2 -sky 1 -compensate 1.5 -extlmhacksize 2048 &quot;[MapFile]&quot;</command>
+</build>
+<separator/>
 <build name="make .pk3">
-<command>[q3map2] -pk3 "[BspFile]"</command>
+<command>[q3map2] -pk3 &quot;[BspFile]&quot;</command>
 </build>
 <build name="make .aas">
 <command>[mbspc] -forcesidesvisible -optimize -bsp2aas &quot;[BspFile]&quot;</command>
 </build>
+<separator/>
+<build name="convert to .ASE">
+<command>[q3map2] -meta -altsplit -deep -samplesize 2 -patchmeta &quot;[MapFile]&quot;</command>
+<command>[q3map2] -convert -format ase -shadersasbitmap &quot;[BspFile]&quot;</command>
+</build>
+<build name="convert to .OBJ">
+<command>[q3map2] -meta -patchmeta &quot;[MapFile]&quot;</command>
+<command>[q3map2] -convert -format obj -shadersasbitmap &quot;[BspFile]&quot;</command>
+</build>
+<separator/>
+<build name="Merges 'inject.bsp' into current bsp">
+<command>[q3map2] -mergebsp -world &quot;[BspFile]&quot; &quot;[EnginePath]q3ut4/maps/inject.bsp&quot;</command>
+</build>
+<build name="Import Lightmaps">
+<command>[q3map2] -import &quot;[MapFile]&quot;</command>
+</build>
+<build name="Export Lightmaps">
+<command>[q3map2] -export &quot;[MapFile]&quot;</command>
+</build>
 </project>
-

@@ -990,17 +990,17 @@ RANDOM : One one of the targeted entities will be triggered at random.
 
 //=============================================================================
 
-///*QUAKED target_score (.1 .3 .1) (-8 -8 -8) (8 8 8)
-//Broken In UrT 4.3?
-//This is used to automatically give frag points to the player who activates this. A spawn location entity like info_player_* or CTF respawn points can target this entity to give points to the player when he spawns in the game. Or a trigger can also be used to activate this. The activator of the trigger will get the points.
-//-------- KEYS --------
-//targetname : Activating entity points to this.
-//count : Number of frag points to give to player (default 1).
-//-------- SPAWN KEYS --------
-//notfree : When set to 1, entity will not spawn in "Free for all" and "Tournament" modes.
-//notteam : When set to 1, entity will not spawn in "Teamplay" and "CTF" modes.
-//notsingle : When set to 1, entity will not spawn in Single Player mode (bot play mode).
-//*/
+/*QUAKED target_score (.1 .3 .1) (-8 -8 -8) (8 8 8)
+This is used to automatically give frag points to the player who activates this. A spawn location entity like info_player_* or CTF respawn points can target this entity to give points to the player when he spawns in the game. Or a trigger can also be used to activate this. The activator of the trigger will get the points.
+Score based gamemodes only
+-------- KEYS --------
+targetname : Activating entity points to this.
+count : Number of frag points to give to player (default 1).
+-------- SPAWN KEYS --------
+notfree : When set to 1, entity will not spawn in "Free for all" and "Tournament" modes.
+notteam : When set to 1, entity will not spawn in "Teamplay" and "CTF" modes.
+notsingle : When set to 1, entity will not spawn in Single Player mode (bot play mode).
+*/
 
 //=============================================================================
 
