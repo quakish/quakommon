@@ -23,6 +23,17 @@
   <item name="Infinit" value="2"/>
 </list>
 
+<list name="colorIndex">
+  <item name="Black" value="0"/>
+  <item name="Red" value="1"/>
+  <item name="Green" value="2"/>
+  <item name="Yellow" value="3"/>
+  <item name="Blue" value="4"/>
+  <item name="Cyan" value="5"/>
+  <item name="Magenta" value="6"/>
+  <item name="White" value="7"/>
+</list>
+
 <list name="obIndex">
   <item name="Disabled" value="0"/>
   <item name="URT [Enabled]" value="1"/>
