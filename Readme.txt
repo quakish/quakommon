@@ -1,5 +1,5 @@
 Urban Terror entity definitions and common shaders by quak
-Updated: 2023-10-09
+Updated: 2023-09-21
 Version 1.3.0
 
 
@@ -83,6 +83,7 @@ Changelog:
  - Fixed conflict issue with common_color (I hope it wont break again)
  - Removed common_spec mirror/portal shaders since they dont work properly
  - Improved build_menu to include a bunch of custom compile options made by me
+ - Added jumpentities.def to give checkpoints for gtk users
 
 1.2.1 :
  - Updated install instructions a bit

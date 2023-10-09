@@ -1,0 +1,67 @@
+//====================
+// Jump Mode
+//====================
+
+/*QUAKED target_checkpoint (0.0 0.3 0.6)(-16 -16 -16) (16 16 16) 
+Checkpoint of timer. It's intended for detailed comparison of a run with the best one.
+Utmost number of checkpoints is 30 for each different type (31st is the end).
+Same as ut_jumpcheckpoint, added for df compatability
+-------- KEYS --------
+targetname : activating trigger points to this.
+name : Name of the way that the gamer will see when he crosses the start line.
+type : Way number for alternate routes.
+points : This checkpoint will reward a running player this amount of points when they hit this checkpoint.</integer>
+*/
+
+/*QUAKED ut_jumpcheckpoint (0.0 0.3 0.6)(-16 -16 -16) (16 16 16) 
+Checkpoint of timer. It's intended for detailed comparison of a run with the best one.
+Utmost number of checkpoints is 30 for each different type (31st is the end).
+Same as ut_jumpcheckpoint, added for df compatability
+-------- KEYS --------
+targetname : activating trigger points to this.
+name : Name of the way that the gamer will see when he crosses the start line.
+type : Way number for alternate routes.
+points : This checkpoint will reward a running player this amount of points when they hit this checkpoint.</integer>
+*/
+
+/*QUAKED ut_jumpstart (0.5 0.0 0.7)(-16 -16 -16) (16 16 16) 
+Start line for jump maps.Attach this entity to a trigger where you want the timer to be tripped at the beginning of the jump route. 
+-------- KEYS --------
+targetname : activating trigger points to this.
+name : Name of the way that the gamer will see when he crosses the start line.
+type : Way number for alternate routes.
+total : This sets the amount points that the client will show as required for the run. Note: This number have no effect on the actual amount of points required.</integer>
+color: If not used, it will default to white.
+Valid color numbers are:
+	0: white (default)
+	1 : red
+	2 : green
+	3 : yellow
+	4 : blue
+	5 : cyan
+	6 : magenta
+	7 : white
+	8 : orange (bugged)
+	9 : olive (bugged)
+*/
+
+/*QUAKED ut_jumpstop (1.0 0.0 0.0)(-16 -16 -16) (16 16 16) 
+Stop line for jump maps. Attach this entity to a trigger where you want the timer to stop at the end of the jump route.
+-------- KEYS --------
+targetname : activating trigger points to this.
+name : Name of the way that the gamer will see when he crosses the start line.
+type : Way number for alternate routes.
+total : Players will need to acquire this amount of points before they can finish the run, at this jumpstop.</integer>
+color: If not used, it will default to white.
+Valid color numbers are:
+	0: white (default)
+	1 : red
+	2 : green
+	3 : yellow
+	4 : blue
+	5 : cyan
+	6 : magenta
+	7 : white
+	8 : orange (bugged)
+	9 : olive (bugged)
+*/

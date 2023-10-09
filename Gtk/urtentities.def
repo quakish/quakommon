@@ -1,6 +1,6 @@
 // Urban Terror entity definition file for Radiant
 // Updated by quak
-// Updated: 2022-02-17 
+// Updated: 2023-10-09 
 // urtentities.def is a older version that is not as updated as .ent but works for gtk.
 // Don't use this if you use nrc
 // General changes:
@@ -11,6 +11,7 @@
 //
 // Futher updates to this file will not be done!
 // Update 02-17 - Added jump mode keys to this aswell, no other changes
+// Update 2023-10-09  - minor fixes to jump related entities
 
 
 //=============================================================================
@@ -1323,6 +1324,7 @@ Note: This key only has an effect on certain jump servers and not offline/devmap
 overbounces : JUMP MODE KEY! Turns off overbounces for certain jump servers. Defaults to 0.
 0 = All overbounces disabled!
 1 = Overbounces enabled. Overbounces will happen unless you use either ‘-noob’ compile (on bsp) or use ‘surfaceparm noob’ (common_ob/noob)
+2 = Overbounces enabled + Allows vanila quake3 overbounce physics
 Note: This key only has an effect on certain jump server and not offline/devmap, for now.
 walljumps : JUMP MODE KEY! Automatically controls g_walljumps for certain jump servers. Defaults to 3.
 Note: This key only has an effect on certain jump servers and not offline/devmap, for now.
