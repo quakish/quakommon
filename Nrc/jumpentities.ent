@@ -4,7 +4,7 @@
 // Urban Terror jump entity definition file for Radiant
 // jumpentities.ent optimised for NetRadiant Custom
 // Updated by quak
-// Last Updat: 2023-09-18
+// Last Updat: 2023-10-09
 // Adds the new checkpoint entities
 // Only works on jump servers that supports them or with the jump client
 -->
