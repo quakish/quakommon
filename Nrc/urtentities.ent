@@ -3,8 +3,8 @@
 <!-- 
 // Urban Terror entity definition file for Radiant
 // urtentities.ent optimized for NetRadiant Custom
-// Updated by quak
-// Last Update: 2023-09-20
+// Updated by quak, Mr.Yeah!
+// Last Update: 2024-10-11
 // Based on entites.def and urbanterror.def
 // General changes:
 // Removes most non Urban Terror entities and keys that don't work
@@ -828,7 +828,7 @@ Use only one per level!
 //=============================================================================
 -->
 
-<point name="info_player_start" color="1.000000 0.000000 0.000000" box="0 0 0 32 32 70">
+<point name="info_player_start" color="1.000000 0.000000 0.000000" box="-16 -16 -24 16 16 46">
 Another player spawn location. Commonly used in Jump maps.
 -------- KEYS --------
 <angle key="angle" name="Direction">Direction in which player will look when spawning in the game.</angle>
@@ -846,7 +846,7 @@ Another player spawn location. Commonly used in Jump maps.
 <!--
 //=============================================================================
 -->
-<point name="info_ut_spawn" color="1.000000 0.500000 0.000000" box="0 0 0 32 32 70">
+<point name="info_ut_spawn" color="1.000000 0.500000 0.000000" box="-16 -16 0 16 16 70">
 Spawning position for Urban Terror team game modes.
 You still need info_player_deathmatch or info_player_start in the map to be able to spawn.
 
