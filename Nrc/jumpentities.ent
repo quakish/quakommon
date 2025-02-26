@@ -131,7 +131,7 @@ music: Path/name of looping .wav file used for level&apos;s music (e.g. music/so
 <string key="precipAmount" name="PrecipAmount">up to 1024, number of flakes, seems to only effect snow and not rain?</string>
 gravity: Don&apos;t use this! Gravity of level (default 800 = normal gravity). [Do NOT put this at anything other than 800 or mess with gravity for servers on other maps!!!] Use trigger_gravity instead!
 -------- VIS KEYS --------
-<integer key="_blocksize" name="BSP Block Size" value="1024 1024 1024">Q3Map always splits the BSP tree along the planes X=_blocksize*n and Y=_blocksize*n. Increase the blocksize using larger powers of 2 to reduce compile times on very large maps with a low structural brush density (default 1024 1024 0, 0 values = disable). </integer>
+<integer key="_blocksize" name="BSP Block Size" value="1024 1024 1024">Q3Map always splits the BSP tree along the planes X=_blocksize*n and Y=_blocksize*n. Increase the blocksize using larger powers of 2 to reduce compile times on very large maps with a low structural brush density (default 1024 1024 1024, 0 values = disable). </integer>
 <integer key="gridsize" name="Dynamic Light Granularity" value="64 64 128">Granularity of the lightgrid, created by q3map, which is used to dynamically light certain game objects, like players and items. Value is three integers separated by spaces, representing number of units between grid points in X Y Z. Default gridsize value is 64 64 128. Use larger powers of 2 to reduce BSP size and compile time on very large maps.</integer>
 -------- JUMP MODE KEYS --------
 Note: These keys only work with the jump client.
